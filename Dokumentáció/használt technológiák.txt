@@ -1,0 +1,3 @@
+Használt technológiák:
+-React
+-ChakraUI
