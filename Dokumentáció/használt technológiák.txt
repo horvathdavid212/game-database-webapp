@@ -2,3 +2,4 @@ Használt technológiák:
 -React
 -ChakraUI
 -Axios
+-React icons
