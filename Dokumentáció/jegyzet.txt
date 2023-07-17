@@ -1,0 +1,4 @@
+A projekt írásakor figyelembe veszem:
+-Seperation of concern-t (szétválasztás elve)
+-Modularitást
+-Újrafelhasználhatóságot
