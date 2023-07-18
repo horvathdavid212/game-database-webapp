@@ -1,8 +1,16 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
+import { useState } from "react";
+
+// interface GameQuery {
+//   genre: Genre | null;
+//   platform: Platform | null;
+// }
 
 function App() {
+  //const [gameQuery,setGameQuery]=useState<GameQuery>({}as GameQuery);
+
   return (
     <Grid
       templateAreas={{
