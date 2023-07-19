@@ -2,12 +2,30 @@ import { Menu, MenuButton, Button, MenuList, MenuItem } from "@chakra-ui/react";
 import { useState } from "react";
 import { RiArrowDropUpLine, RiArrowDropDownLine } from "react-icons/ri";
 
-const SortSelector = () => {
+interface Props {
+  onSelectSortOrder: (sortOrder: string) => void;
+  sortOrder: string;
+}
+
+const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const sortOrders = [
+    { value: "", label: "Relevancia" },
+    { value: "-added", label: "Hozzáadás dátuma" },
+    { value: "name", label: "Név" },
+    { value: "-released", label: "Megjelenés" },
+    { value: "-metacritic", label: "Népszerűség" },
+    { value: "-rating", label: "Pontszám" },
+  ];
+
+  const currentSortOrder = sortOrders.find(
+    (order) => order.value === sortOrder
+  );
   return (
     <Menu>
       <MenuButton
@@ -15,15 +33,18 @@ const SortSelector = () => {
         rightIcon={isMenuOpen ? <RiArrowDropUpLine /> : <RiArrowDropDownLine />}
         onClick={handleMenuToggle}
       >
-        Rendezés: Relevancia
+        Rendezés: {currentSortOrder?.label || "Relevancia"}
       </MenuButton>
       <MenuList>
-        <MenuItem>Relevancia</MenuItem>
-        <MenuItem>Hozzáadás</MenuItem>
-        <MenuItem>Név</MenuItem>
-        <MenuItem>Megjelenés</MenuItem>
-        <MenuItem>Népszerűség</MenuItem>
-        <MenuItem>Pontszám</MenuItem>
+        {sortOrders.map((order) => (
+          <MenuItem
+            onClick={() => onSelectSortOrder(order.value)}
+            key={order.value}
+            value={order.value}
+          >
+            {order.label}
+          </MenuItem>
+        ))}
       </MenuList>
     </Menu>
   );
