@@ -1,6 +1,6 @@
 # Játék adatbázis böngésző webalkalmazás
 
-Ez a webalkalmazás egy játék adatbázist böngésző alkalmazás, amely az RAWG.io API-ját használja. A projekt csak frontend részből áll, nincs hozzá backend, tehát az API hívások közvetlenül a kliens oldalon történnek. Az alkalmazás megjelenése a RAWG.io stílusát követi, és Mosh Hamedami React [kurzusa](https://codewithmosh.com/p/ultimate-react-part1) alpján készült. 
+Ez a webalkalmazás egy játék adatbázist böngésző alkalmazás, amely a RAWG.io API-ját használja. A projekt csak frontend részből áll, nincs hozzá backend, tehát az API hívások közvetlenül a kliens oldalon történnek. Az alkalmazás megjelenése a RAWG.io stílusát követi, és Mosh Hamedami React [kurzusa](https://codewithmosh.com/p/ultimate-react-part1) alpján készült. 
 
 ### Telepítés és használat:
 1. Klónozd le ezt a repository-t a helyi gépedre.
