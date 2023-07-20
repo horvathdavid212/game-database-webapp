@@ -8,12 +8,6 @@ interface Props {
 }
 
 const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const handleMenuToggle = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   const sortOrders = [
     { value: "", label: "Relevancia" },
     { value: "-added", label: "Hozzáadás dátuma" },
@@ -28,11 +22,7 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
   );
   return (
     <Menu>
-      <MenuButton
-        as={Button}
-        rightIcon={isMenuOpen ? <RiArrowDropUpLine /> : <RiArrowDropDownLine />}
-        onClick={handleMenuToggle}
-      >
+      <MenuButton as={Button}>
         Rendezés: {currentSortOrder?.label || "Relevancia"}
       </MenuButton>
       <MenuList>

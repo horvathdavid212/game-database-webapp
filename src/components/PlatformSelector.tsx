@@ -10,22 +10,12 @@ interface Props {
 }
 
 const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const handleMenuToggle = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   const { data, error } = usePlatforms();
 
   if (error) return null;
   return (
     <Menu>
-      <MenuButton
-        as={Button}
-        rightIcon={isMenuOpen ? <RiArrowDropUpLine /> : <RiArrowDropDownLine />}
-        onClick={handleMenuToggle}
-      >
+      <MenuButton as={Button}>
         {selectedPlatform?.name || "Platformok"}
       </MenuButton>
       <MenuList>

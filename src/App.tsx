@@ -30,13 +30,13 @@ function App() {
         lg: "200px 1fr",
       }}
     >
-      <GridItem area="nav" bg="lightgreen">
+      <GridItem area="nav">
         <NavBar
           onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
         />
       </GridItem>
       <Show above="lg">
-        <GridItem area="aside" bg="gold" padding="5px">
+        <GridItem area="aside" padding="5px">
           <GenreList
             selectedGenre={gameQuery.genre}
             onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
@@ -44,7 +44,7 @@ function App() {
         </GridItem>
       </Show>
 
-      <GridItem area="main" bg="dodgerblue">
+      <GridItem area="main">
         <Box paddingLeft={2}>
           <GameHeading gameQuery={gameQuery} />
           <HStack spacing={5} margin={2}>
