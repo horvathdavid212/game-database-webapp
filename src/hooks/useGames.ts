@@ -29,6 +29,7 @@ const useGames = (gameQuery: GameQuery) =>
     getNextPageParam: (lastPage, allPages) => {
       return lastPage.next ? allPages.length + 1 : undefined;
     },
+    staleTime: 6 * 60 * 60 * 1000, // 6 óránként lesz csak friss adat, addig a chache-ben lévőt használja
   });
 
 export default useGames;
