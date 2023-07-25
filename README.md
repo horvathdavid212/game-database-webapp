@@ -22,6 +22,7 @@ Ez a webalkalmazás egy játék adatbázist böngésző alkalmazás, amely a RAW
 - ChakraUI
 - Axios
 - React icons
+- React Query
 
 ### A projekt írásakor figyelembe vettem:
 - Seperation of concern-t (szétválasztás elve)
